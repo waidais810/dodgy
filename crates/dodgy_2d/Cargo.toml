@@ -13,3 +13,11 @@ keywords = ["orca", "rvo", "collision", "avoidance", "navigation"]
 [dependencies]
 glam = "0.28.0"
 fastrand = "2.1"
+
+[target.'cfg(feature = "js")'.dependencies]
+fastrand = {version = "2.1", features = ["js"]}
+
+
+[features]
+# 定义 js 特性
+js = []
