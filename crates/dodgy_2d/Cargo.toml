@@ -2,10 +2,7 @@
 edition = "2021"
 name = "dodgy_2d"
 version = "0.5.2"
-
 description = "An implementation of ORCA, a local collision avoidance algorithm for 2D."
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/andriyDev/dodgy"
@@ -15,4 +12,14 @@ keywords = ["orca", "rvo", "collision", "avoidance", "navigation"]
 
 [dependencies]
 glam = "0.28.0"
-rand = "0.8.5"
+
+# 默认情况下使用普通的 rand 依赖
+rand = { version = "0.8.5" }
+
+[target.'cfg(feature = "js")'.dependencies]
+rand = { version = "0.8.5", features = ["getrandom"] }
+getrandom = { version = "0.2", features = ["js"] }
+
+[features]
+# 定义 js 特性
+js = []
