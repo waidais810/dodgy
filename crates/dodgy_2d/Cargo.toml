@@ -15,8 +15,12 @@ keywords = ["orca", "rvo", "collision", "avoidance", "navigation"]
 
 [dependencies]
 glam = "0.29.1"
-rand = "0.9.1"
+
+fastrand = "2.1"
+[target.'cfg(feature = "js")'.dependencies]
+fastrand = {version = "2.1", features = ["js"]}
 
 [features]
 # Allows access to some of the internal data used to generate the final suggested velocity.
 debug = []
+js = []

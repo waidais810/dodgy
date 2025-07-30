@@ -368,7 +368,7 @@ impl Agent {
         if recip.is_finite() && recip > 0.0 {
           velocity_from_circle_center * recip
         } else {
-          let angle: f32 = rand::random();
+          let angle: f32 = fastrand::f32();
           Vec2::new(angle.cos(), angle.sin())
         }
       };
